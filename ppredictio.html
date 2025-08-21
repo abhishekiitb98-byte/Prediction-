@@ -13,7 +13,7 @@
             color: #333;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background-color: #fff;
             border-radius: 8px;
@@ -34,43 +34,97 @@
             margin: 5px 0;
             color: #555;
         }
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            min-width: 1200px;
         }
         th, td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            word-wrap: break-word;
         }
         th {
             background-color: #007bff;
             color: #fff;
             font-weight: 600;
             text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            font-size: 0.9em;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
         }
         tr:hover {
-            background-color: #f1faff;
+            background-color: #e3f2fd;
             transition: background-color 0.3s ease;
-        }
-        td {
-            vertical-align: top;
         }
         .subject {
             font-weight: bold;
             color: #0056b3;
+            background-color: #e7f3ff !important;
+            min-width: 140px;
+            font-size: 1em;
+        }
+        .topics-cell {
+            max-width: 300px;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .prediction-cell {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .untouched-cell {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .probability {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .ca-note {
+            color: #0066cc;
+            font-style: italic;
         }
         @media screen and (max-width: 768px) {
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-            th, td {
-                min-width: 150px;
+            .container {
+                padding: 10px;
             }
             header h1 {
                 font-size: 1.8em;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+            .topics-cell {
+                max-width: 250px;
+                font-size: 0.75em;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 0.75em;
+            }
+            .topics-cell {
+                max-width: 200px;
+                font-size: 0.7em;
             }
         }
         footer {
@@ -78,6 +132,7 @@
             margin-top: 20px;
             padding: 10px 0;
             color: #777;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -85,73 +140,78 @@
     <div class="container">
         <header>
             <h1>BPSC 2025 Prelims Topics Analysis</h1>
-            <p>Comparative Analysis of Topics (2023, 2024, 2025 Predictions) and Untouched Areas</p>
+            <p>Comprehensive Comparative Analysis of Topics (2023, 2024, 2025 Predictions) and Untouched Areas</p>
         </header>
-        <table>
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Topics Asked in 2023</th>
-                    <th>Topics Asked in 2024</th>
-                    <th>Predicted Topics for 2025 (with CA Analysis)</th>
-                    <th>Untouched Areas (Syllabus/Trends)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="subject">Current Affairs</td>
-                    <td>5G Tech, Space Missions, Shipwreck Tourism, G20 Stats, Wagner Head, Gender Gap Report, Queen Elizabeth, DefExpo Theme, Thadingyut Festival, White House Facts, Net Metering, Submersible Implosion, Fashion/Interview/Sports, Mother Tongue Survey, Vulture Conservation, Tortoises Release, Arunachal Reaffirm, Shooting Medal, NEP Vocational, ECTA Agreement, Plain Language Act, Fossils Discovery, Lisbon Declaration</td>
-                    <td>UN Voting (Palestine), Union Budget (Oilseeds), PM Appointments (Kuwait), UNSC Voting, Corporate Bond Growth, NATO (Sweden), BRICS Chair, Dolphin Centre, JIMEX-24, WTO Conference, Trump Shooting, Mobile Manufacturing Rank, UNESCO City (Literature), Goldman Prize, French Open Winner, Mountaineer Achievement, Transgender Appointment (Bihar), Shreyasi Singh, Payal Kapadia Film, Moon Soil (China), Bihula Festival, Vishnupad Yojana</td>
-                    <td>Union Budget 2025 Schemes (e.g., Atmanirbharta updates, Bihar allocations; 95%), Bihar Reforms (e.g., TRE 4.0, Pollution-Free 2047; 95%), International Conflicts (e.g., Israel-Hamas escalation, Ukraine; 90%), Climate/Biodiversity (e.g., COP29 outcomes, Bihar Dolphin initiatives; 90%), Indexes/Rankings (e.g., HDI/GII 2025 ranks; 85%), Space/Tech (e.g., Chandrayaan-4 plans, AI/GPT advancements; 85%), Sports/Awards (e.g., Olympics 2024 follow-up, Arjuna Awards 2025; 80%), Economy Global (e.g., G20 2025 summit, FDI trends FY25; 80%)</td>
-                    <td>Detailed Panchayati Raj implementations, Community Development Programs (post-indep Bihar)</td>
-                </tr>
-                <tr>
-                    <td class="subject">General Science</td>
-                    <td>Computer Languages, GPT Full Form, Tongue Tastes, Disorders, Pulsars, Lab-Grown Diamonds, Bulletproof Fibre, HMX Full Form, Tesla Robot, Manhattan Project, Concave Mirror, Photoelectric Cell, Concentration (Chem), COVID Vaccines, Bad Conductor, DNA Discovery, Falling Objects (Moon), Vector Vaccines, Seafloor Spreading, Plate Tectonics, mRNA Full Form, AC Current, Current Density, Medication Classification, Reaction Rate, Nerves Meet</td>
-                    <td>Atomic Theory (Dalton), Human Physiology (Stomach Acid), Measurement Devices (Odometer), Heat Transfer, Rock Types (Igneous), Bacterial Diseases (Anthrax), Fire Extinguisher Constituents, Radiation (Body Aches), Spore Reproduction, Blood Components, Artificially Prepared Element, Fertilizers (Nitrogen), Exothermic Processes, Wire Resistance, Chlorophyll Function, Non-Contact Force, Atomic Model (Thomson)</td>
-                    <td>Atomic Theory/Laws (e.g., Dalton explanations; 95%), Human Physiology (e.g., Acids/Blood; 95%), Heat Transfer/Radiation (e.g., Conduction; 90%), Vaccines/Diseases (e.g., COVID mechanisms; 90%), Measurement Devices (e.g., Odometer; 85%), Rock Formation/Tectonics (e.g., Igneous; 85%), Fertilizers/Elements (e.g., Nitrogen; 80%), DNA/Genetics (e.g., Discoverers; 80%), Electricity/Conductors (e.g., Bad liquids; 80%)</td>
-                    <td>Advanced Biology (e.g., Genetics beyond basics), Physics (Quantum/Relativity), Chemistry (Organic reactions)</td>
-                </tr>
-                <tr>
-                    <td class="subject">History & National Movement</td>
-                    <td>Indus Animals, UNESCO Sites, DPSP Origin, Sikkim Statehood, Art Styles (Stupa/Chaitanya/Bihari), Suzani, Vikramshila, Babur Arrival, Asht Pradhan, Bodhisattva Painting, Fa-Hien/Hiuen Tsang, Charaka etc., Nowruz, Nathpanthis, Wood's Dispatch, Maithili Development, Magadha Capital, Vernacular Press, Lord Mayo Resolution, Nitisara, Futuhat-i-Alamgiri, Meghavarman, Bihar Separation, Revolt 1857 Failure, Gandhi Saved (Cook), Bakasht Movement, Events Chronology, Lord Lytton, Treaty after Buxar, Dutch Factory Patna, Gandhi Hunger Strike, Quit India Bihar Leader, Champaran Response, Societies Founders, Ambabai, Cabinet Mission, Safety Valve Theory, Fundamental Rights Session</td>
-                    <td>Ancient Rulers (Assam/Harsha), Maratha Administration (Asht Pradhan), Chach Nama Translation, Farazi Movement, Assassination (Haniyeh), Peasant Hardships (Newspaper), Chera Dynasty Capital, Banned Book (Gharib Hindustan), New Lamps for Old, Ramkrishna Mission, Capital Shift to Delhi, Do or Die Slogan, Ajivika Sect, First Hindi Daily in Bihar, Newspapers/Editors, Haryak Vansh, Malik Kafur, King Praversena, Royal Commission (Currency), GOI Act 1935 Features, SC Categorization (Bihar), Dynasty after Shishunag, Bihar Province Formation, Bombay Plan, Triangular Commerce, Provisional Govt (Bose), Queen Victoria Empress, S-T-S Strategy, Parallel Governments (Quit India), Direct Action Day</td>
-                    <td>Quit India/Champaran (Bihar Role; 95%), Ancient Dynasties (Magadha/Gupta; 95%), Freedom Slogans/Events (Do or Die; 90%), Medieval Rulers/Books (Nitisara; 85%), Indus Valley (Animals; 85%), Peasant Movements (Bakasht; 80%), British Acts/Resolutions (Vernacular; 80%), Bihar History (Vikramshila/Dutch; 80%), Paintings/Sects (Bodhisattva; 75%)</td>
-                    <td>19th Century Resurgence (e.g., Brahmo Samaj reforms), Socio-Religious Reforms (pre-1947), Economic History Pre-1947 (e.g., colonial policies)</td>
-                </tr>
-                <tr>
-                    <td class="subject">Geography</td>
-                    <td>Cloth Origins, Rock Types, Minerals (Brazil), Ports (Artificial), Human Races, Mountain Ranges Sequence, Bihar Districts/Industries, Rivers (Different), Orbits (Comet), Cities/Rivers (Seine), Drainage Systems (Bihar), Land Types (Amarkosha), Coal Reserves (States), Zaid Crop, Cattle Fair (Sonepur), Air Pollution Causes, Munger Hilly Region</td>
-                    <td>Technopolis, Ports (Artificial), Mountain Ranges (Sequence), Bihar Districts/Industries, Rivers (Different), Zoji-la Tunnel, Cities/Rivers (Seine), Drainage Systems (Bihar), Land Types (Amarkosha), Coal Reserves (States), Rural-Urban Migration, Zaid Crop, Cattle Fair (Sonepur), Air Pollution Causes, Munger Hilly Region, ST Population (Bihar), Sex Ratio (Bihar), Ores (Corundum), Andes Location, Decomposition (Biology cross)</td>
-                    <td>Bihar Rivers/Canals (Gandak/Triveni; 95%), Minerals/Resources (Gold Bihar; 95%), Rock Systems (Dharwar; 90%), Migration/Pollution (Rural-urban/Air; 85%), Biodiversity/Hotspots (Dolphin/Gulf; 85%), Mountain Ranges/Plateaus (Tropic/IST; 80%), Drainage/Heights (Kosi; 80%), Ports/Races (Artificial; 75%)</td>
-                    <td>Physical Geography (Soils/Climate zones), Agricultural Resources (Crop patterns/Irrigation), Natural Disasters (Floods in Bihar)</td>
-                </tr>
-                <tr>
-                    <td class="subject">Polity</td>
-                    <td>Collegium System, 42nd Amendment, ST Criteria, Fundamental Rights Origin, Untouchability, High Court Judges, Fifth Schedule, Basic Structure Cases, Political Parties Establishment, Mother Tongue in House, Cut Motion, Bihar Budget Presenter, Anglo-Indian in Lok Sabha, Preamble Amendments, MLA Disqualification, MP Office of Profit, Council of Ministers Size, Royal Titles Act</td>
-                    <td>Constitutional Amendments (Anglo-Indian), Union Ministers (Textiles), Odisha CM Constituency, Panchayats Accounts (Art 243J), Supreme Court Judge Appointment, Sikh Pilgrimage (Patna Sahib), Capital Shift to Delhi (Historical cross), SFB to Universal Bank (Economy cross), Direct Action Day (Historical cross), Postal Ballot Age, Preamble Amendments, Shompen Tribe Voting, National Flag Adoption, Lok Sabha Speaker to President</td>
-                    <td>Constitutional Amendments (42nd/104th; 95%), DPSP/Fundamental Rights (Origins; 90%), Schedules/Articles (Fifth Tribes; 90%), Emergency Provisions (Art 360; 85%), Panchayati Raj/Planning (Art 243J; 80%)</td>
-                    <td>Detailed Panchayati Raj (73rd Amendment), Community Development (Post-indep), State Legislature Powers (e.g., Disqualification)</td>
-                </tr>
-                <tr>
-                    <td class="subject">Economy</td>
-                    <td>FER Components, Rules of Origin, Infant Mortality, Human Capital Formation, Insolvency/Bankruptcy, Industrial Policy Year, PLI Scheme, SVAMITVA Scheme, Financial Emergency, Stagflation Causes, FDI Trends, Gaya Population, Non-Plan Expenditures, Globalization Impact, Fiscal Deficit Trends</td>
-                    <td>Union Budget (Oilseeds), IIP Data, Corporate Bond Growth, Oilseeds Self-Reliance, Sesame Coverage, Sheikh Ahmad Appointment, Index of Industrial Production, Shares in GVA, Agriculture in Bihar GDP, Female LFPR Increase, Melamine (Plastics cross), RBI Inflation Forecast, Mobile Manufacturing Rank, SFB to Universal Bank, Bihar Budget Allocation, Bihar Per Capita NSDP, Vishnupad Yojana, CGTMSE Full Form, PCRA Full Form, Green Budget in Bihar, Bihar Hydro Corp</td>
-                    <td>Bihar GDP/Changes (Agri Share; 95%), Budget Priorities/Schemes (PLI; 90%), FDI/Fiscal Deficit (Trends; 85%), IMR/Human Capital (Rates; 80%)</td>
-                    <td>Planning in India/Bihar (NITI/Five-Year Plans), Post-Indep Bihar Changes (Detailed sectoral)</td>
-                </tr>
-                <tr>
-                    <td class="subject">General Mental Ability</td>
-                    <td>Code Language, Direction Sense, Land Calculation, Odd Pair, Number Series</td>
-                    <td>Sequence/Pattern, Clock Hands, Arithmetic Sequence, Counting Triangles, Calendar Reasoning, Mathematical Operations, Odd One Out, Direction Sense, Analogy</td>
-                    <td>Sequences/Patterns (Number/Clock; 95%), Codes/Analogies (Language; 90%), Directions/Distance (95%), Counting/Visual (Triangles; 80%), Operations/Analogies (Odd Pairs; 80%)</td>
-                    <td>Advanced Logical (e.g., Syllogisms), Analytical Puzzles (e.g., Grouping)</td>
-                </tr>
-            </tbody>
-        </table>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Topics Asked in 2023</th>
+                        <th>Topics Asked in 2024</th>
+                        <th>Predicted Topics for 2025 (with CA Analysis)</th>
+                        <th>Untouched Areas (Syllabus/Trends)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="subject">Current Affairs</td>
+                        <td class="topics-cell">5G Tech, Space Missions, Shipwreck Tourism, G20 Stats, Wagner Head, Gender Gap Report, Queen Elizabeth, DefExpo Theme, Thadingyut Festival, White House Facts, Net Metering, Submersible Implosion, Fashion/Interview/Sports, Mother Tongue Survey, Vulture Conservation, Tortoises Release, Arunachal Reaffirm, Shooting Medal, NEP Vocational, ECTA Agreement, Plain Language Act, Fossils Discovery, Lisbon Declaration</td>
+                        <td class="topics-cell">UN Voting (Palestine), Union Budget (Oilseeds), PM Appointments (Kuwait), UNSC Voting, Corporate Bond Growth, NATO (Sweden), BRICS Chair, Dolphin Centre, JIMEX-24, WTO Conference, Trump Shooting, Mobile Manufacturing Rank, UNESCO City (Literature), Goldman Prize, French Open Winner, Mountaineer Achievement, Transgender Appointment (Bihar), Shreyasi Singh, Payal Kapadia Film, Moon Soil (China), Bihula Festival, Vishnupad Yojana</td>
+                        <td class="topics-cell prediction-cell">Union Budget 2025 Schemes (e.g., Atmanirbharta updates, Bihar allocations; <span class="ca-note">CA: High due to FY25 focus</span>), Bihar Reforms (e.g., TRE 4.0, Pollution-Free 2047; <span class="ca-note">CA: State-specific events Aug 2024-25</span>), International Conflicts (e.g., Israel-Hamas escalation, Ukraine; <span class="ca-note">CA: Ongoing global hotspots</span>), Climate/Biodiversity (e.g., COP29 outcomes, Bihar Dolphin initiatives; <span class="ca-note">CA: Post-COP29 emphasis</span>), Indexes/Rankings (e.g., HDI/GII 2025 ranks; <span class="ca-note">CA: Annual releases</span>), Space/Tech (e.g., Chandrayaan-4 plans, AI/GPT advancements; <span class="ca-note">CA: ISRO 2025 missions</span>), Sports/Awards (e.g., Olympics 2024 follow-up, Arjuna Awards 2025; <span class="ca-note">CA: Paris Olympics analysis</span>), Economy Global (e.g., G20 2025 summit, FDI trends FY25; <span class="ca-note">CA: Post-2024 economic data</span>)</td>
+                        <td class="topics-cell untouched-cell">Detailed Panchayati Raj implementations (syllabus emphasis but low coverage), Community Development Programs (post-indep Bihar untouched)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">General Science</td>
+                        <td class="topics-cell">Computer Languages, GPT Full Form, Tongue Tastes, Disorders, Pulsars, Lab-Grown Diamonds, Bulletproof Fibre, HMX Full Form, Tesla Robot, Manhattan Project, Concave Mirror, Photoelectric Cell, Concentration (Chem), COVID Vaccines, Bad Conductor, DNA Discovery, Falling Objects (Moon), Vector Vaccines, Seafloor Spreading, Plate Tectonics, mRNA Full Form, AC Current, Current Density, Medication Classification, Reaction Rate, Nerves Meet</td>
+                        <td class="topics-cell">Atomic Theory (Dalton), Human Physiology (Stomach Acid), Measurement Devices (Odometer), Heat Transfer, Rock Types (Igneous), Bacterial Diseases (Anthrax), Fire Extinguisher Constituents, Radiation (Body Aches), Spore Reproduction, Blood Components, Artificially Prepared Element, Fertilizers (Nitrogen), Exothermic Processes, Wire Resistance, Chlorophyll Function, Non-Contact Force, Atomic Model (Thomson)</td>
+                        <td class="topics-cell prediction-cell">Atomic Theory/Laws (e.g., Dalton explanations; <span class="probability">95% prob</span>), Human Physiology (e.g., Acids/Blood; <span class="probability">95%</span>), Heat Transfer/Radiation (e.g., Conduction; <span class="probability">90%</span>), Vaccines/Diseases (e.g., COVID mechanisms; <span class="probability">90%</span>; <span class="ca-note">CA: Post-2025 health updates</span>), Measurement Devices (e.g., Odometer; <span class="probability">85%</span>), Rock Formation/Tectonics (e.g., Igneous; <span class="probability">85%</span>), Fertilizers/Elements (e.g., Nitrogen; <span class="probability">80%</span>), DNA/Genetics (e.g., Discoverers; <span class="probability">80%</span>), Electricity/Conductors (e.g., Bad liquids; <span class="probability">80%</span>)</td>
+                        <td class="topics-cell untouched-cell">Advanced Biology (e.g., Genetics beyond basics; syllabus appreciation but low), Physics (Quantum/Relativity; everyday focus skips), Chemistry (Organic reactions; basic laws dominant)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">History & National Movement</td>
+                        <td class="topics-cell">Indus Animals, UNESCO Sites, DPSP Origin, Sikkim Statehood, Art Styles (Stupa/Chaitanya/Bihari), Suzani, Vikramshila, Babur Arrival, Asht Pradhan, Bodhisattva Painting, Fa-Hien/Hiuen Tsang, Charaka etc., Nowruz, Nathpanthis, Wood's Dispatch, Maithili Development, Magadha Capital, Vernacular Press, Lord Mayo Resolution, Nitisara, Futuhat-i-Alamgiri, Meghavarman, Bihar Separation, Revolt 1857 Failure, Gandhi Saved (Cook), Bakasht Movement, Events Chronology, Lord Lytton, Treaty after Buxar, Dutch Factory Patna, Gandhi Hunger Strike, Quit India Bihar Leader, Champaran Response, Societies Founders, Ambabai, Cabinet Mission, Safety Valve Theory, Fundamental Rights Session</td>
+                        <td class="topics-cell">Ancient Rulers (Assam/Harsha), Maratha Administration (Asht Pradhan), Chach Nama Translation, Farazi Movement, Assassination (Haniyeh), Peasant Hardships (Newspaper), Chera Dynasty Capital, Banned Book (Gharib Hindustan), New Lamps for Old, Ramkrishna Mission, Capital Shift to Delhi, Do or Die Slogan, Ajivika Sect, First Hindi Daily in Bihar, Newspapers/Editors, Haryak Vansh, Malik Kafur, King Praversena, Royal Commission (Currency), GOI Act 1935 Features, SC Categorization (Bihar), Dynasty after Shishunag, Bihar Province Formation, Bombay Plan, Triangular Commerce, Provisional Govt (Bose), Queen Victoria Empress, S-T-S Strategy, Parallel Governments (Quit India), Direct Action Day</td>
+                        <td class="topics-cell prediction-cell">Quit India/Champaran (Bihar Role; <span class="probability">95%</span>), Ancient Dynasties (Magadha/Gupta; <span class="probability">95%</span>), Freedom Slogans/Events (Do or Die; <span class="probability">90%</span>), Medieval Rulers/Books (Nitisara; <span class="probability">85%</span>), Indus Valley (Animals; <span class="probability">85%</span>), Peasant Movements (Bakasht; <span class="probability">80%</span>), British Acts/Resolutions (Vernacular; <span class="probability">80%</span>), Bihar History (Vikramshila/Dutch; <span class="probability">80%</span>), Paintings/Sects (Bodhisattva; <span class="probability">75%</span>; <span class="ca-note">CA: Recent heritage sites</span>)</td>
+                        <td class="topics-cell untouched-cell">19th Century Resurgence (e.g., Brahmo Samaj reforms; syllabus emphasis but low), Socio-Religious Reforms (pre-1947; resurgence skipped), Economic History Pre-1947 (e.g., colonial policies; modern dominant)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">Geography</td>
+                        <td class="topics-cell">Cloth Origins, Rock Types, Minerals (Brazil), Ports (Artificial), Human Races, Mountain Ranges Sequence, Bihar Districts/Industries, Rivers (Different), Orbits (Comet), Cities/Rivers (Seine), Drainage Systems (Bihar), Land Types (Amarkosha), Coal Reserves (States), Zaid Crop, Cattle Fair (Sonepur), Air Pollution Causes, Munger Hilly Region</td>
+                        <td class="topics-cell">Technopolis, Ports (Artificial), Mountain Ranges (Sequence), Bihar Districts/Industries, Rivers (Different), Zoji-la Tunnel, Cities/Rivers (Seine), Drainage Systems (Bihar), Land Types (Amarkosha), Coal Reserves (States), Rural-Urban Migration, Zaid Crop, Cattle Fair (Sonepur), Air Pollution Causes, Munger Hilly Region, ST Population (Bihar), Sex Ratio (Bihar), Ores (Corundum), Andes Location, Decomposition (Biology cross)</td>
+                        <td class="topics-cell prediction-cell">Bihar Rivers/Canals (Gandak/Triveni; <span class="probability">95%</span>), Minerals/Resources (Gold Bihar; <span class="probability">95%</span>), Rock Systems (Dharwar; <span class="probability">90%</span>), Migration/Pollution (Rural-urban/Air; <span class="probability">85%</span>), Biodiversity/Hotspots (Dolphin/Gulf; <span class="probability">85%</span>; <span class="ca-note">CA: COP29 biodiversity</span>), Mountain Ranges/Plateaus (Tropic/IST; <span class="probability">80%</span>), Drainage/Heights (Kosi; <span class="probability">80%</span>), Ports/Races (Artificial; <span class="probability">75%</span>)</td>
+                        <td class="topics-cell untouched-cell">Physical Geography (Soils/Climate zones; Bihar rivers dominant), Agricultural Resources (Crop patterns/Irrigation; low despite syllabus), Natural Disasters (Floods in Bihar; trends skip detailed)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">Polity</td>
+                        <td class="topics-cell">Collegium System, 42nd Amendment, ST Criteria, Fundamental Rights Origin, Untouchability, High Court Judges, Fifth Schedule, Basic Structure Cases, Political Parties Establishment, Mother Tongue in House, Cut Motion, Bihar Budget Presenter, Anglo-Indian in Lok Sabha, Preamble Amendments, MLA Disqualification, MP Office of Profit, Council of Ministers Size, Royal Titles Act</td>
+                        <td class="topics-cell">Constitutional Amendments (Anglo-Indian), Union Ministers (Textiles), Odisha CM Constituency, Panchayats Accounts (Art 243J), Supreme Court Judge Appointment, Sikh Pilgrimage (Patna Sahib), Capital Shift to Delhi (Historical cross), SFB to Universal Bank (Economy cross), Direct Action Day (Historical cross), Postal Ballot Age, Preamble Amendments, Shompen Tribe Voting, National Flag Adoption, Lok Sabha Speaker to President</td>
+                        <td class="topics-cell prediction-cell">Constitutional Amendments (42nd/104th; <span class="probability">95%</span>), DPSP/Fundamental Rights (Origins; <span class="probability">90%</span>), Schedules/Articles (Fifth Tribes; <span class="probability">90%</span>), Emergency Provisions (Art 360; <span class="probability">85%</span>), Panchayati Raj/Planning (Art 243J; <span class="probability">80%</span>; Untouched details likely)</td>
+                        <td class="topics-cell untouched-cell">Detailed Panchayati Raj (73rd Amendment; syllabus but low), Community Development (Post-indep; untouched), State Legislature Powers (e.g., Disqualification beyond 10th Schedule; trends skip)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">Economy</td>
+                        <td class="topics-cell">FER Components, Rules of Origin, Infant Mortality, Human Capital Formation, Insolvency/Bankruptcy, Industrial Policy Year, PLI Scheme, SVAMITVA Scheme, Financial Emergency, Stagflation Causes, FDI Trends, Gaya Population, Non-Plan Expenditures, Globalization Impact, Fiscal Deficit Trends</td>
+                        <td class="topics-cell">Union Budget (Oilseeds), IIP Data, Corporate Bond Growth, Oilseeds Self-Reliance, Sesame Coverage, Sheikh Ahmad Appointment, Index of Industrial Production, Shares in GVA, Agriculture in Bihar GDP, Female LFPR Increase, Melamine (Plastics cross), RBI Inflation Forecast, Mobile Manufacturing Rank, SFB to Universal Bank, Bihar Budget Allocation, Bihar Per Capita NSDP, Vishnupad Yojana, CGTMSE Full Form, PCRA Full Form, Green Budget in Bihar, Bihar Hydro Corp</td>
+                        <td class="topics-cell prediction-cell">Bihar GDP/Changes (Agri Share; <span class="probability">95%</span>; <span class="ca-note">CA: 22% growth FY25</span>), Budget Priorities/Schemes (PLI; <span class="probability">90%</span>; <span class="ca-note">CA: 2025 updates</span>), FDI/Fiscal Deficit (Trends; <span class="probability">85%</span>; <span class="ca-note">CA: FY25 data</span>), IMR/Human Capital (Rates; <span class="probability">80%</span>)</td>
+                        <td class="topics-cell untouched-cell">Planning in India/Bihar (NITI/Five-Year Plans; syllabus but data-heavy trends skip), Post-Indep Bihar Changes (Detailed sectoral; low beyond GDP)</td>
+                    </tr>
+                    <tr>
+                        <td class="subject">Mental Ability</td>
+                        <td class="topics-cell">Code Language, Direction Sense, Land Calculation, Odd Pair, Number Series</td>
+                        <td class="topics-cell">Sequence/Pattern, Clock Hands, Arithmetic Sequence, Counting Triangles, Calendar Reasoning, Mathematical Operations, Odd One Out, Direction Sense, Analogy</td>
+                        <td class="topics-cell prediction-cell">Sequences/Patterns (Number/Clock; <span class="probability">95%</span>), Codes/Analogies (Language; <span class="probability">90%</span>), Directions/Distance (<span class="probability">95%</span>), Counting/Visual (Triangles; <span class="probability">80%</span>), Operations/Analogies (Odd Pairs; <span class="probability">80%</span>)</td>
+                        <td class="topics-cell untouched-cell">Advanced Logical (e.g., Syllogisms; basic patterns dominant), Analytical Puzzles (e.g., Grouping; trends favor sequences/codes)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <footer>
-            <p>Generated on August 21, 2025, 10:05 AM IST | Data Source: BPSC 2023-24 Analysis & 2025 Predictions</p>
+            <p>Generated on December 2024 | Data Source: BPSC 2023-24 Analysis & 2025 Predictions | Comprehensive Analysis of All Untouched Areas and Current Affairs Trends</p>
         </footer>
     </div>
 </body>
 </html>
+
